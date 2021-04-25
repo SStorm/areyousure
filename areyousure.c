@@ -10,6 +10,18 @@ int main(int argc, char** argv) {
         printf("Need arguments\n");
         return 1;
     }
+
+    printf("DANGER. You are about to execute: \n\n  ");
+    print_argv(argc, argv);
+    printf("\n\n");
+    printf("Are you sure? [Yy] ");
+    int c = getchar();
+    if (c != 'Y' && c != 'y') {
+        printf("Stopping");
+        return 1;
+    }
+
+
     int res = execvp(argv[1], argv+1);
     print_argv(argc, argv);
     printf(": %s\n", strerror(errno));
