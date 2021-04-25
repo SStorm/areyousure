@@ -3,17 +3,22 @@
 A simple utility that can be used to intercept CLI commands and ask the user
 if they are really sure about doing it.
 
-## Installation
+```text
+❯ kubectl delete namespace some
+DANGER. You are about to execute: 
 
-You will need cmake, make and a C compiler for this.
+  kubectl delete namespace some
 
-```shell
+Are you sure? [Yy] n
+Stopping%                                                                                                                                                                                                                                      ~ ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 2.62s 🕑  k8s.bregenz.a1/b20c05c5-846a-4ebd-b740-84ef38a79a9a ⎈  20:22:10 
+❯ kubectl delete namespace some
+DANGER. You are about to execute: 
 
-mkdir build
-cd build
-cmake ..
-make
-sudo make install # Will copy to /usr/local/bin
+  kubectl delete namespace some
+
+Are you sure? [Yy] Y
+namespace "some" deleted
+
 ```
 
 ## Usage
@@ -32,6 +37,18 @@ kubectl() {
 }
 ```
 
+## Installation
+
+You will need cmake, make and a C compiler for this.
+
+```shell
+
+mkdir build
+cd build
+cmake ..
+make
+sudo make install # Will copy to /usr/local/bin
+```
 
 ## TODO
 
