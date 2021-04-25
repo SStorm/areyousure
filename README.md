@@ -6,27 +6,26 @@ A simple utility that can be used to intercept CLI commands and ask the user
 if they are really sure about doing it.
 
 ```text
-❯ kubectl delete namespace some
-DANGER. You are about to execute: 
+$ kubectl delete namespace somenamespace
+😮 DANGER. You are about to execute: 
 
-  kubectl delete namespace some
+👉 kubectl delete namespace somenamespace
 
-Are you sure? [Yy] n
-Stopping 
-❯ kubectl delete namespace some
-DANGER. You are about to execute: 
+🤔 Are you sure? [Yy] n
+👍 Stopping
+$ kubectl delete namespace somenamespace
+😮 DANGER. You are about to execute: 
 
-  kubectl delete namespace some
+👉 kubectl delete namespace somenamespace
 
-Are you sure? [Yy] Y
-namespace "some" deleted
-
+🤔 Are you sure? [Yy] y
+namespace "somenamespace" deleted
 ```
 
 ## Usage
 
 Suppose you want to intercept all `kubectl delete` commands, add the following to your
-`~/.zshrc`, `~/.bashrc` or similar:
+`~/.zshrc` / `~/.bashrc` or similar:
 
 
 ```bash
@@ -39,12 +38,13 @@ kubectl() {
 }
 ```
 
+You probably know what you're doing if you're using another shell.
+
 ## Installation
 
 You will need cmake, make and a C compiler for this.
 
 ```shell
-
 mkdir build
 cd build
 cmake ..
@@ -55,7 +55,6 @@ sudo make install # Will copy to /usr/local/bin
 ## TODO
 
 1. Timer (i.e. will execute in 5s)
-2. --install which builds a shell script to wrap command (`areyousure --install kubectl delete`)
-3. Colours, Emojis, Fun.
-4. Config file
-5. Automatic build in GitHub
+2. `--install` which builds a shell script to wrap command (`areyousure --install kubectl delete`)
+3. Config options / file (i.e. whether to use emojis)
+4. Automatic build in GitHub
