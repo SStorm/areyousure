@@ -42,9 +42,11 @@ You probably know what you're doing if you're using another shell.
 
 ## Installation
 
-You will need cmake, make and a C compiler for this.
+You will need cmake, make and a C compiler for this. On a Debian-based distro
+something like this is like going to work:
 
 ```shell
+apt install cmake make gcc
 mkdir build
 cd build
 cmake ..
