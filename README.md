@@ -1,5 +1,7 @@
 # Are You Sure?
 
+![build status](https://github.com/SStorm/areyousure/actions/workflows/build.yml/badge.svg)
+
 A simple utility that can be used to intercept CLI commands and ask the user
 if they are really sure about doing it.
 
