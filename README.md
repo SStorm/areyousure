@@ -2,8 +2,12 @@
 
 ![build status](https://github.com/SStorm/areyousure/actions/workflows/build.yml/badge.svg)
 
-A simple utility that can be used to intercept CLI commands and ask the user
-if they are really sure about doing it.
+``areyousure`` is a command-line utility that can be used to intercept 
+sensitive commands and ask the user whether they are sure about executing them. 
+This can save your bacon when accidentally doing a `git push -f` on the wrong branch
+or a `kubectl delete namespace production`.
+
+### Example
 
 ```text
 $ kubectl delete namespace somenamespace
@@ -60,3 +64,4 @@ sudo make install # Will copy to /usr/local/bin
 2. `--install` which builds a shell script to wrap command (`areyousure --install kubectl delete`)
 3. Config options / file (i.e. whether to use emojis)
 4. Automatic build in GitHub
+5. Pre-defined list of sensitive commands that can be auto-installed
