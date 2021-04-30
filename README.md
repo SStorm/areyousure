@@ -46,6 +46,8 @@ You probably know what you're doing if you're using another shell.
 
 ## Installation
 
+Grab the latest build from the releases section, or follow the build instructions below.
+
 You will need cmake, make and a C compiler for this. On a Debian-based distro
 something like this is like going to work:
 
